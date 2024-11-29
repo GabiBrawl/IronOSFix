@@ -42,7 +42,7 @@ bool LIS2DH12::detect() {
   if (!ACCEL_I2C_CLASS::probe(LIS2DH_I2C_ADDRESS)) {
     return false;
   }
-  // Read chip id to ensure its not an address collision
+  // Read chip id to ensure it's not an address collision
   uint8_t id = 0;
   if (ACCEL_I2C_CLASS::Mem_Read(LIS2DH_I2C_ADDRESS, LIS2DH_WHOAMI_REG, &id, 1)) {
 #ifdef ACCEL_LIS_CLONE
